@@ -1,17 +1,7 @@
 var express = require('express');
 var app = express();
 var PORT = 3000;
-
-var middleware = {
-	requireAuthentication: function (req, res, next) {
-		console.log('routeeee');
-		next();
-	},
-	logger: function (req, res, next) {
-		console.log(req.method);
-		next();
-	}
-};
+var middleware = require('./middleware.js');
 
 //app.use(middleware.requireAuthentication);
 app.use(middleware.logger);
